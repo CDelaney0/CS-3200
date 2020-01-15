@@ -1,3 +1,4 @@
+var start = Date.now();
 function DisplayName(){
 	//replace the name with player chosen name
 	var name =document.getElementById("name").value;
@@ -12,8 +13,18 @@ function DisplayName(){
 };
 var object = document.getElementById("target");
 object.onclick=function(){
-	var x = Math.floor(Math.random()*300);
-	var y = Math.floor(Math.random()*300);
+	//relocate the target
+	var x = Math.floor(Math.random()*window.innerHeight);
+	var y = Math.floor(Math.random()*window.innerWidth);
 	object.style.top = x +'px';
-	object.style.top = y +'px';
+	object.style.left = y +'px';
+	//determine how long it took the player and update player times where appropriate
+	var lap = Date.now() - start;
+	start = Date.now();
+	document.getElementById("playercurrentscore").innerHTML = lap;
+	var best = document.getElementById("playerbestscore").innerHTML;
+	//if new lap is faster then old best update it
+	if (best > lap){
+		document.getElementById("playerbestscore").innerHTML = lap;
+		}
 };
