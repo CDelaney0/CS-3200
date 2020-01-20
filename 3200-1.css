@@ -1,6 +1,34 @@
-#target{
+button[id^="target"]{
 	cursor:pointer;
 	position: absolute;
 	top: 0px;
 	left: 0px;
+}
+
+#adder{
+	background-color:#EE6060;
+	border:outset;
+	font-size:36px;
+	
+}
+
+#title {
+	cursor:pointer;
+}
+
+th {
+	background-color: #47F9E7;
+	color: black;
+}
+
+th, td {
+	padding: 5px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
 }
