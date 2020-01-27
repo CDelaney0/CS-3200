@@ -1,4 +1,3 @@
-
 var count=2;
 function incrementCount(){
 	count++;
@@ -54,53 +53,43 @@ window.onload = loadMechi();
 window.onload = loadRobbie();
 window.onload = loadRusty();
 
-function loadDeus() {
-	var xhttp = new XMLHttpRequest();
-  	xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("deus").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "deus_time.txt", true);
-  xhttp.send(); 
+function loadDeus(){
+	fetch("deus.txt")
+	if (this.responseText != undefined){
+	then(document.getElementById("deus").innerHTML = this.responseText)
+	} else{
+		then(document.getElementById("deus").innerHTML = 10)
+	}
 }
-function loadData() {
-	var xhttp = new XMLHttpRequest();
-  	xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("data").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "data_time.txt", true);
-  xhttp.send(); 
+
+function loadData(){
+	fetch("data.txt")
+	if (this.responseText != undefined){
+	then(document.getElementById("data").innerHTML = this.responseText)
+	} else{
+		then(document.getElementById("data").innerHTML = 10)}
 }
-function loadMechi() {
-	var xhttp = new XMLHttpRequest();
-  	xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("mechi").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "mechi_time.txt", true);
-  xhttp.send(); 
+
+function loadMechi(){
+	fetch("mechi.txt")
+	if (this.responseText != undefined){
+	then(document.getElementById("mechi").innerHTML = this.responseText)
+	} else{
+		then(document.getElementById("mechi").innerHTML = 10)}
 }
-function loadRobbie() {
-	var xhttp = new XMLHttpRequest();
-  	xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("robbie").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "robbie_time.txt", true);
-  xhttp.send(); 
+
+function loadRobbie(){
+	fetch("robbie.txt")
+	if (this.responseText != undefined){
+	then(document.getElementById("robbie").innerHTML = this.responseText)
+	} else{
+		then(document.getElementById("robbie").innerHTML = 10)}
 }
-function loadRusty() {
-	var xhttp = new XMLHttpRequest();
-  	xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("rusty").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "rusty_time.txt", true);
-  xhttp.send(); 
+
+function loadRusty(){
+	fetch("rusty.txt")
+	if (this.responseText != undefined){
+	then(document.getElementById("rusty").innerHTML = this.responseText)
+	} else{
+		then(document.getElementById("rusty").innerHTML = 10)}
 }
